@@ -1,5 +1,5 @@
 # NutriTrace AI
-
+[![tests](https://github.com/Fister13f/nutritrace-ai/actions/workflows/tests.yml/badge.svg)](https://github.com/Fister13f/nutritrace-ai/actions/workflows/tests.yml)
 NutriTrace AI is an automated environmental analytics platform engineered to predict nutrient-driven water quality changes, identify eutrophication risk vulnerabilities, and trace point/non-point pollution metrics within regional watersheds.
 
 ## Wire Diagram Architecture
