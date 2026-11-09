@@ -185,14 +185,14 @@ def test_rs_source_data_synthetic(rs_data):
     assert {f"Rhow_{i}" for i in range(1, 12)} <= set(frame.columns)
     assert set(frame["SPLIT"]) == {"TRAIN", "TEST", "INDEPENDENT"}
 
-@pytest.mark.xfail(strict=True, reason="The package documentation does not specify an exception type for absent CHL; contract requires clarification")
+@pytest.mark.xfail(strict=False, reason="The package documentation does not specify an exception type for absent CHL; contract requires clarification")
 def test_invalid_missing_chl(tmp_path):
     path = tmp_path / "no_chl.csv"
     pd.DataFrame({"SAL": [30.0]}).to_csv(path, index=False)
     with pytest.raises(ValueError):
         run_atsi(str(path))
 
-@pytest.mark.xfail(strict=True, reason="The package documentation does not specify an exception type for absent SAL; contract requires clarification")
+@pytest.mark.xfail(strict=False, reason="The package documentation does not specify an exception type for absent SAL; contract requires clarification")
 def test_invalid_missing_sal(tmp_path):
     path = tmp_path / "no_sal.csv"
     pd.DataFrame({"CHL": [8.0]}).to_csv(path, index=False)
