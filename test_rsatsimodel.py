@@ -201,5 +201,5 @@ def test_invalid_missing_sal(tmp_path):
         
 def test_deliberately_wrong_result():
     """Demonstrate that GitHub Actions detects a failed test."""
-    assert 2 + 2 == 5
+    assert 2 + 2 == 4
 
