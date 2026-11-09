@@ -198,3 +198,8 @@ def test_invalid_missing_sal(tmp_path):
     pd.DataFrame({"CHL": [8.0]}).to_csv(path, index=False)
     with pytest.raises(ValueError):
         run_atsi(str(path))
+        
+def test_deliberately_wrong_result():
+    """Demonstrate that GitHub Actions detects a failed test."""
+    assert 2 + 2 == 4
+
