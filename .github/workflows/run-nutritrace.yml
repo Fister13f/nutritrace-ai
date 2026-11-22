@@ -1,0 +1,32 @@
+
+name: Run NutriTrace Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "run_workflow.py"
+      - ".github/workflows/run-nutritrace.yml"
+
+jobs:
+  run-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run NutriTrace synthetic workflow
+        run: python run_workflow.py
+
+      - name: Upload investigation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: nutritrace-demo-reports
+          path: outputs/
